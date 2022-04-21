@@ -6,8 +6,14 @@ const GlobalStyles = createGlobalStyle`
     *{
       
         box-sizing: border-box;
+
+        
     }
-    body,html,#root { width: 100% }; 
+    body,html,#root { 
+        max-width: 768px;
+        margin: 0 auto;
+        width: 100%;
+    }; 
 
 `;
 
