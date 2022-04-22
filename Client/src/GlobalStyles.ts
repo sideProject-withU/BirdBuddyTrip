@@ -13,6 +13,7 @@ const GlobalStyles = createGlobalStyle`
         max-width: 768px;
         margin: 0 auto;
         width: 100%;
+        color: #282846;
     }; 
 
 `;
