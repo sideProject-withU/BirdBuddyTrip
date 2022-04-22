@@ -9,6 +9,12 @@ const GlobalStyles = createGlobalStyle`
     }
     html {
         background: #E4F7F0;
+        background-image: url('images/cloud.png'), 
+                          url('images/cloud.png');
+        background-repeat: no-repeat, 
+                           no-repeat;
+        background-position: left top, 
+                             right bottom;
     }
     body { 
         max-width: 768px;
