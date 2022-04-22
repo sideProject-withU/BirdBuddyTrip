@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Container = styled.div`
   border: 1px solid red;
 `;
-const Main = () => {
-  return <Container>main test</Container>;
+const Mypage = () => {
+  return <Container>mypage test</Container>;
 };
-export default Main;
+export default Mypage;
