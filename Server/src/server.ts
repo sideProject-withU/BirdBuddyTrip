@@ -1,8 +1,9 @@
 import 'dotenv/config';
+
 // import "regenerator-runtime";
 
 import app from './app';
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 4040;
 
 app.listen(PORT, () => {
   console.log(`listening on port http://localhost:${PORT}`);
