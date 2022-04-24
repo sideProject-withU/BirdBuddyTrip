@@ -1,24 +1,17 @@
 import { useState } from 'react';
-import styled from 'styled-components';
-
-const Container = styled.nav`
-  position: fixed;
-  max-width: 768px;
-  height: 5rem;
-  background-color: #007580;
-  top: 0;
-  width: 100%;
-`;
-
-const Selection = styled.select`
-  width: 5.5rem;
-  padding: 0.5em 0.5em;
-  font-weight: bold;
-`;
+import { Container, LoginButton, MyPageIcon, SearchIcon, SearchInput, SearchWrap, Selection } from '../../styled/Nav';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../state/store/store';
 
 const UpperNav = () => {
   const [choice, setChoice] = useState<string>('');
-  const [searchClick, setFind] = useState<boolean>(false);
+  const [signInClick, setSignInClick] = useState<boolean>(false);
+  const [isSearching, setIsSearching] = useState<boolean>(false);
+
+  const isLogin: boolean = useSelector((state: RootState) => state.login.value);
+
+  console.log(isLogin);
+
   const lists = [
     '지역',
     '서울',
@@ -53,7 +46,31 @@ const UpperNav = () => {
       >
         {options}
       </Selection>
-      <div></div>
+      <SearchWrap>
+        <SearchInput
+          onFocus={() => {
+            setIsSearching(true);
+          }}
+          onBlur={() => {
+            setIsSearching(false);
+          }}
+        />
+        <SearchIcon>
+          <i className="fas fa-search" />
+        </SearchIcon>
+      </SearchWrap>
+      {isLogin ? (
+        <MyPageIcon className="fa-solid fa-user" />
+      ) : (
+        <LoginButton
+          signInClick={signInClick}
+          onClick={() => {
+            setSignInClick(!signInClick);
+          }}
+        >
+          로그인
+        </LoginButton>
+      )}
     </Container>
   );
 };
