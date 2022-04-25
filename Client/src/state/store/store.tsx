@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import loginReducer from './login';
+import modalReducer from './showModal';
 
 export const store = configureStore({
   reducer: {
     login: loginReducer,
+    showModal: modalReducer,
   },
 });
 
