@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import {
-  Container,
   LoginButton,
   MyPageIcon,
   SearchIcon,
@@ -8,18 +7,18 @@ import {
   SearchWrap,
   Selection,
   UpperContainer,
-} from '../../styled/Nav';
+} from '../../styled/nav';
 import { useSelector } from 'react-redux';
+import { useAppDispatch } from '../../state/store/hook';
 import { RootState } from '../../state/store/store';
+import { showModal } from '../../state/store/showModal';
 
 const UpperNav = () => {
   const [choice, setChoice] = useState<string>('');
-  const [signInClick, setSignInClick] = useState<boolean>(false);
   const [isSearching, setIsSearching] = useState<boolean>(false);
 
+  const dispatch = useAppDispatch();
   const isLogin: boolean = useSelector((state: RootState) => state.login.value);
-
-  console.log(isLogin);
 
   const lists = [
     '지역',
@@ -72,9 +71,8 @@ const UpperNav = () => {
         <MyPageIcon className="fa-solid fa-user" />
       ) : (
         <LoginButton
-          signInClick={signInClick}
           onClick={() => {
-            setSignInClick(!signInClick);
+            dispatch(showModal(true));
           }}
         >
           로그인
