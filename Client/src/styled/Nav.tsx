@@ -9,9 +9,12 @@ export const Container = styled.nav`
   max-width: 768px;
   height: 5rem;
   background-color: #007580;
-  top: 0;
   width: 100%;
   padding: 30px;
+`;
+
+export const UpperContainer = styled(Container)`
+  top: 0;
 `;
 
 export const Selection = styled.select`
