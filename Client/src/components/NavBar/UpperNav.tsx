@@ -1,5 +1,14 @@
 import { useState } from 'react';
-import { Container, LoginButton, MyPageIcon, SearchIcon, SearchInput, SearchWrap, Selection } from '../../styled/Nav';
+import {
+  Container,
+  LoginButton,
+  MyPageIcon,
+  SearchIcon,
+  SearchInput,
+  SearchWrap,
+  Selection,
+  UpperContainer,
+} from '../../styled/Nav';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../state/store/store';
 
@@ -40,7 +49,7 @@ const UpperNav = () => {
   });
 
   return (
-    <Container>
+    <UpperContainer>
       <Selection
         onInput={(event: React.FormEvent<HTMLSelectElement>) => setChoice((event.target as HTMLInputElement).value)}
       >
@@ -71,7 +80,7 @@ const UpperNav = () => {
           로그인
         </LoginButton>
       )}
-    </Container>
+    </UpperContainer>
   );
 };
 
