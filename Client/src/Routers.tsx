@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Modal from './components/Modal/Modal';
 import DownNav from './components/NavBar/DownNav';
 import UpperNav from './components/NavBar/UpperNav';
 import GlobalStyles from './GlobalStyles';
@@ -11,6 +12,7 @@ const Routers = () => {
   return (
     <BrowserRouter>
       <GlobalStyles />
+      <Modal />
       <UpperNav />
       <Routes>
         <Route path="/" element={<Main />} />

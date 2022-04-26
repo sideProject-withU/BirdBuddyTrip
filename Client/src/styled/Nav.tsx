@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { signInClickProp } from '../state/typeDefs';
 
 export const Container = styled.nav`
   position: fixed;
@@ -61,10 +60,10 @@ export const MyPageIcon = styled.i`
   color: #d8ebe4;
 `;
 
-export const LoginButton = styled.button<signInClickProp>`
+export const LoginButton = styled.button`
   text-decoration: none;
   font-weight: bold;
-  color: ${(props) => (props.signInClick ? '#fed049' : '#d8ebe4')};
+  color: #d8ebe4;
   font-size: 20px;
   border: 0;
   background-color: transparent;
