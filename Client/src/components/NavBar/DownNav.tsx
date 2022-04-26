@@ -1,31 +1,6 @@
-import styled from 'styled-components';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { DownContainer, NavMenu, NavMenuList } from '../../styled/nav';
 
-interface isActiveProp {
-  isActive: boolean;
-}
-
-const Container = styled.nav`
-  height: 5rem;
-  position: fixed;
-  bottom: 0;
-  max-width: 768px;
-  width: 100%;
-  background-color: #007580;
-`;
-const NavMenu = styled.ul`
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding: 1.5rem 0;
-  margin: 0;
-`;
-const NavMenuList = styled.li<isActiveProp>`
-  font-size: 2rem;
-  color: ${(props) => (props.isActive ? '#fed049' : '#d8ebe4')};
-  display: flex;
-  cursor: pointer;
-`;
 const DownNav = () => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
@@ -40,7 +15,7 @@ const DownNav = () => {
     navigate(location);
   };
   return (
-    <Container>
+    <DownContainer>
       <NavMenu>
         {menus.map((menu, idx) => {
           return (
@@ -50,7 +25,7 @@ const DownNav = () => {
           );
         })}
       </NavMenu>
-    </Container>
+    </DownContainer>
   );
 };
 export default DownNav;

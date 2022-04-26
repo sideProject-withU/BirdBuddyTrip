@@ -49,12 +49,12 @@ const UpperNav = () => {
 
   return (
     <UpperContainer>
-      <Selection
-        onInput={(event: React.FormEvent<HTMLSelectElement>) => setChoice((event.target as HTMLInputElement).value)}
-      >
-        {options}
-      </Selection>
       <SearchWrap>
+        <Selection
+          onInput={(event: React.FormEvent<HTMLSelectElement>) => setChoice((event.target as HTMLInputElement).value)}
+        >
+          {options}
+        </Selection>
         <SearchInput
           onFocus={() => {
             setIsSearching(true);

@@ -2,27 +2,30 @@ import styled from 'styled-components';
 
 export const Container = styled.nav`
   position: fixed;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   max-width: 768px;
   height: 5rem;
   background-color: #007580;
   width: 100%;
-  padding: 30px;
 `;
 
 export const UpperContainer = styled(Container)`
   top: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 30px;
 `;
 
 export const Selection = styled.select`
-  width: 5.5rem;
+  width: 5.2rem;
   padding: 0.5em 0.5em;
   font-weight: bold;
   background-color: #d8ebe4;
   color: #282846;
   outline: none;
+  position: absolute;
+  left: 0;
+  top: 5px;
 `;
 
 export const SearchWrap = styled.div`
@@ -30,10 +33,11 @@ export const SearchWrap = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
+  width: 60%;
 `;
 
 export const SearchInput = styled.input`
-  width: 13rem;
+  width: 100%;
   text-decoration: none;
   border: none;
   padding: 10px 0px;
@@ -68,4 +72,26 @@ export const LoginButton = styled.button`
   border: 0;
   background-color: transparent;
   cursor: grab;
+`;
+
+interface isActiveProp {
+  isActive: boolean;
+}
+
+//DownNav
+export const DownContainer = styled(Container)`
+  bottom: 0;
+`;
+export const NavMenu = styled.ul`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1.5rem 0;
+  margin: 0;
+`;
+export const NavMenuList = styled.li<isActiveProp>`
+  font-size: 2rem;
+  color: ${(props) => (props.isActive ? '#fed049' : '#d8ebe4')};
+  display: flex;
+  cursor: pointer;
 `;
