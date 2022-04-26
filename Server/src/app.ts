@@ -3,9 +3,11 @@ import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
-// import userRouter from './router/userRouter';
-// import postRouter from './router/postRouter';
-// import oauthRotuer from './router/oauthRouter';
+
+import userRouter from './router/userRouter';
+import postRouter from './router/postRouter';
+import signRotuer from './router/signRouter';
+
 
 const app = express();
 const logger = morgan('dev');
@@ -22,8 +24,10 @@ app.use(
 
 app.use(logger);
 
-// app.use('/user', userRouter);
-// app.use('/post', postRouter);
-// app.use('/oauth', oauthRotuer);
+
+app.use('/user', userRouter);
+app.use('/post', postRouter);
+app.use('/sign', signRotuer);
+
 
 export default app;
