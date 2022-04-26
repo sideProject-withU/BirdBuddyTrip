@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from 'react-router-dom';
-import { DownContainer, NavMenu, NavMenuList } from '../../styled/Nav';
+import { DownContainer, NavMenu, NavMenuList } from '../../styled/nav';
 
 const DownNav = () => {
   const navigate = useNavigate();
