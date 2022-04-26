@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { useAppDispatch } from '../../state/store/hook';
 import { RootState } from '../../state/store/store';
 import { showModal } from '../../state/store/showModal';
+import SignIn from './SignIn';
 
 const Modal = () => {
   const dispatch = useAppDispatch();
@@ -17,10 +18,12 @@ const Modal = () => {
             <Icon
               onClick={() => {
                 dispatch(showModal(false));
+                window.location.reload();
               }}
               className="fas fa-times"
             />
           </CloseButton>
+          <SignIn />
         </ModalView>
       </ModalBackdrop>
     </ModalContainer>
