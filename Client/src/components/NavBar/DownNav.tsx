@@ -1,14 +1,31 @@
-import styled from 'styled-components';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { DownContainer, NavMenu, NavMenuList } from '../../styled/nav';
 
-const Container = styled.nav`
-  height: 5rem;
-  position: fixed;
-  bottom: 0;
-  max-width: 768px;
-  width: 100%;
-  background-color: yellow;
-`;
 const DownNav = () => {
-  return <Container>하단네비</Container>;
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
+  const menus = [
+    { className: 'fa-solid fa-house', location: '/main' },
+    { className: 'fa-solid fa-pen-to-square', location: '/makepost' },
+    { className: 'fa-solid fa-comments', location: '/chatlist' },
+    { className: 'fa-solid fa-user', location: '/mypage' },
+  ];
+
+  const handleMenuClick = (location: string) => {
+    navigate(location);
+  };
+  return (
+    <DownContainer>
+      <NavMenu>
+        {menus.map((menu, idx) => {
+          return (
+            <NavMenuList key={idx} isActive={pathname === menu.location} onClick={() => handleMenuClick(menu.location)}>
+              <i className={menu.className}></i>
+            </NavMenuList>
+          );
+        })}
+      </NavMenu>
+    </DownContainer>
+  );
 };
 export default DownNav;
