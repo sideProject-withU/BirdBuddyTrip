@@ -17,12 +17,15 @@ export const UpperContainer = styled(Container)`
 `;
 
 export const Selection = styled.select`
-  width: 5.5rem;
+  width: 5.2rem;
   padding: 0.5em 0.5em;
   font-weight: bold;
   background-color: #d8ebe4;
   color: #282846;
   outline: none;
+  position: absolute;
+  left: 0;
+  top: 5px;
 `;
 
 export const SearchWrap = styled.div`
@@ -30,10 +33,11 @@ export const SearchWrap = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
+  width: 60%;
 `;
 
 export const SearchInput = styled.input`
-  width: 13rem;
+  width: 100%;
   text-decoration: none;
   border: none;
   padding: 10px 0px;
