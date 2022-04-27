@@ -17,7 +17,7 @@ const GlobalStyles = createGlobalStyle`
                              right bottom;
     }
     body { 
-        padding: 5rem 0;
+        padding : 5rem 0;
         max-width: 768px;
         margin: 0 auto;
         width: 100%;

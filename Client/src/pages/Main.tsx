@@ -1,9 +1,12 @@
-import Post from '../components/Post/Post';
+import PostThumb from '../components/Post/PostThumb';
+import { dummyPosts } from '../dummys/dummyPosts';
 
 const Main = () => {
   return (
     <div>
-      <Post />
+      {dummyPosts.map((el, idx) => (
+        <PostThumb key={idx} post={el} />
+      ))}
     </div>
   );
 };
