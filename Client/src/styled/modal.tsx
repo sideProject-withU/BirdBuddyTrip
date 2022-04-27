@@ -21,7 +21,6 @@ export const ModalBackdrop = styled.div`
   height: 100%;
   margin: 0 auto;
   border: 10px solid black;
-  backdrop-filter: blur(4px);
 `;
 
 export const ModalView = styled.div`
@@ -67,7 +66,7 @@ export const Input = styled.input<ErrorProps>`
   border-bottom: 2px solid ${(props) => (props.error ? 'red' : 'rgba(0, 0, 0, 0.2)')};
   margin: 10px;
   &::placeholder {
-    font-size: 13px;
+    font-size: 15px;
   }
   &:last-child {
     margin-bottom: 10px;
@@ -81,59 +80,64 @@ export const ErrorMessage = styled.div`
   font-size: 12px;
 `;
 
+export const SignUpWrap = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
 export const SignUpLink = styled.div`
-  all: unset;
   margin: 10px 0px 20px 0px;
   cursor: pointer;
   font-weight: 500;
+  font-size: 15px;
 `;
 
-const Button = styled.div`
-  all: unset;
-  width: 60%;
-  color: black;
-  cursor: pointer;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  transition: 0.4s;
-  color: black;
-  border-radius: 5px;
-  margin: 5px;
+export const SignUpLead = styled(SignUpLink)``;
+
+export const SignUpButton = styled(SignUpLink)`
+  color: #007580;
+  margin-left: 5px;
 `;
 
 export const LoginButton = styled.button`
   all: unset;
-  width: 60%;
+  width: 55%;
   color: black;
   cursor: pointer;
-  height: 40px;
+  height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
   transition: 0.4s;
   color: black;
-  border-radius: 5px;
-  margin: 5px;
-  background-color: rgb(136, 136, 136);
+  border-radius: 10px;
+  margin: 10px 0px;
+  background-color: rgb(216, 235, 228);
   &:hover {
-    background-color: rgb(136, 136, 136, 0.4);
+    background-color: rgba(216, 235, 228, 0.5);
   }
 `;
 
-export const KakaoButton = styled(Button)`
-  background-color: rgb(247, 230, 0);
-  &:hover {
-    background-color: rgb(247, 230, 0, 0.4);
-  }
+export const SocalLoginWrap = styled.div`
+  display: flex;
+  justify-content: space-around;
 `;
 
-export const GuestButton = styled(Button)`
-  background-color: #007580;
-  &:hover {
-    background-color: rgb(49, 115, 126, 0.4);
-  }
+export const SocialButton = styled.div`
+  margin: 15px;
+  font-size: 13px;
 `;
+
+export const SocialIcon = styled.img`
+  width: 3.3rem;
+  color: grey;
+`;
+
+export const ColumnoWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+export const GuestButton = styled.div``;
