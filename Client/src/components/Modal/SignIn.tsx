@@ -1,18 +1,28 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FormData } from '../../state/typeDefs';
+import { useAppDispatch } from '../../state/store/hook';
+import { moveToSignupPage } from '../../state/store/register';
+
 import {
   Form,
   Input,
   Title,
-  KakaoButton,
   GuestButton,
   LoginButton,
   SignUpLink,
   ErrorMessage,
+  SocalLoginWrap,
+  ColumnoWrap,
+  SocialIcon,
+  SocialButton,
+  SignUpButton,
+  SignUpWrap,
+  SignUpLead,
 } from '../../styled/modal';
 
 const SignIn = () => {
+  const dispatch = useAppDispatch();
   const [invalid, setInvalid] = useState<boolean>(true);
   const [infoCheck, setInfoCheck] = useState<string>('');
 
@@ -58,10 +68,27 @@ const SignIn = () => {
         })}
       />
       {invalid ? <ErrorMessage>{errors.password?.message}</ErrorMessage> : <ErrorMessage>{infoCheck}</ErrorMessage>}
-      <LoginButton>로그인</LoginButton>
-      <SignUpLink>회원가입</SignUpLink>
-      <KakaoButton>카카오로 로그인 </KakaoButton>
-      <GuestButton>게스트로 로그인 </GuestButton>
+      <LoginButton>LOGIN</LoginButton>
+      <SignUpWrap>
+        <SignUpLead>아이디가 없으신가요?</SignUpLead>
+        <SignUpButton
+          onClick={() => {
+            dispatch(moveToSignupPage(true));
+          }}
+        >
+          회원가입
+        </SignUpButton>
+      </SignUpWrap>
+      <SocalLoginWrap>
+        <ColumnoWrap>
+          <SocialIcon src="images/kakao.png" />
+          <SocialButton>카카오로 로그인 </SocialButton>
+        </ColumnoWrap>
+        <ColumnoWrap>
+          <SocialIcon src="images/book.png" />
+          <SocialButton>게스트로 로그인 </SocialButton>
+        </ColumnoWrap>
+      </SocalLoginWrap>
     </Form>
   );
 };

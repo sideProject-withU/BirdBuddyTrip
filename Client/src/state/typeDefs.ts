@@ -13,8 +13,9 @@ export type ErrorProps = {
   error: string | undefined;
 };
 
-export interface loginState {
-  value: boolean;
+export interface registerState {
+  loginstate: boolean;
+  signupClick: boolean;
 }
 
 export interface modalState {

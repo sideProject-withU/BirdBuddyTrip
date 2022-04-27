@@ -18,7 +18,7 @@ const UpperNav = () => {
   const [isSearching, setIsSearching] = useState<boolean>(false);
 
   const dispatch = useAppDispatch();
-  const isLogin: boolean = useSelector((state: RootState) => state.login.value);
+  const isLogin: boolean = useSelector((state: RootState) => state.register.loginstate);
 
   const lists = [
     '지역',
