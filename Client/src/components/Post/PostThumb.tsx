@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { PostThumbContainer, PhotoColumn, DetailColumn, LikeColumn } from '../../styled/postthumb';
 import { PostProps } from '../../propstype/PostProps';
-import ChatList from '../../pages/ChatList';
 
 const PostThumb: React.FC<PostProps> = ({ post }) => {
   const [isLiked, setIsLiked] = useState(false);
