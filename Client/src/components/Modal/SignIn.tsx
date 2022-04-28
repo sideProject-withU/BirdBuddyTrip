@@ -7,9 +7,8 @@ import { moveToSignupPage } from '../../state/store/register';
 import {
   Form,
   Input,
-  Title,
-  GuestButton,
-  LoginButton,
+  SignInTitle,
+  Button,
   SignUpLink,
   ErrorMessage,
   SocalLoginWrap,
@@ -20,6 +19,7 @@ import {
   SignUpWrap,
   SignUpLead,
 } from '../../styled/modal';
+import { emailPattern, passwordPattern } from '../../utils/validation/validation';
 
 const SignIn = () => {
   const dispatch = useAppDispatch();
@@ -33,21 +33,11 @@ const SignIn = () => {
     formState: { errors },
   } = useForm<FormData>({ mode: 'onChange' });
 
-  const emailPattern = {
-    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-    message: '이메일 형식으로 입력해주세요',
-  };
-
-  const passwordPattern = {
-    value: /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
-    message: '8자이상 / 영문 / 숫자 / 특수문자를 조합해주세요',
-  };
-
   const onSubmit = () => {};
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      <Title>로그인</Title>
+      <SignInTitle>로그인</SignInTitle>
       <Input
         type="text"
         placeholder="Email"
@@ -68,7 +58,7 @@ const SignIn = () => {
         })}
       />
       {invalid ? <ErrorMessage>{errors.password?.message}</ErrorMessage> : <ErrorMessage>{infoCheck}</ErrorMessage>}
-      <LoginButton>LOGIN</LoginButton>
+      <Button>LOGIN</Button>
       <SignUpWrap>
         <SignUpLead>아이디가 없으신가요?</SignUpLead>
         <SignUpButton
