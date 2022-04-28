@@ -12,3 +12,8 @@ export const nickPattern = {
   value: /^[ㄱ-ㅎ|가-힣|a-z|A-Z|0-9|]+$/,
   message: '숫자, 영어, 한글만 입력해주세요',
 };
+
+export const birthPattern = {
+  value: /([0-9]{2}(0[1-9]|1[0-2])(0[1-9]|[1,2][0-9]|3[0,1]))/,
+  message: '6자를 입력해주세요(예 : 921105)',
+};
