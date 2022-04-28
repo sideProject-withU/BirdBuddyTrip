@@ -17,13 +17,12 @@ const GlobalStyles = createGlobalStyle`
                              right bottom;
     }
     body { 
-        padding : 5rem 0;
         max-width: 768px;
-        margin: 0 auto;
+        margin: 5rem auto;
         width: 100%;
         color: #282846;
+        min-height: 100vh;
         background: white;
-        height: 100vh;
     }; 
 
 `;
