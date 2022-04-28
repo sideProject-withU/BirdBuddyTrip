@@ -23,6 +23,7 @@ export const PhotoColumn = styled.div`
 export const DetailColumn = styled.div`
   padding-left: 1rem;
   max-width: 38rem;
+  min-width: 10rem;
   > header {
     margin: 0.3rem 0;
     h1 {
