@@ -1,9 +1,17 @@
 import styled from 'styled-components';
 
+export const OptionContainer = styled.div`
+  position: sticky;
+  top: 5rem;
+  background: white;
+  padding: 1rem 0.5rem;
+`;
+
 export const Container = styled.div`
   display: flex;
   > div {
     margin: 0.3rem;
+    margin-bottom: 0.5rem;
     > input {
       display: none;
     }
