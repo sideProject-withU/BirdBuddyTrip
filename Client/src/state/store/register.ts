@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { registerState } from '../typeDefs';
+import { registerState } from '../../utils/typeDefs';
 
 const initialState: registerState = {
   loginstate: false,

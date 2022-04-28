@@ -3,14 +3,16 @@ export type showModalProp = {
 };
 
 export type FormData = {
-  nickname?: string;
   email: string;
   password: string;
   password2?: string;
+  nickname?: string;
+  gender?: string;
+  birth?: string;
 };
 
-export type ErrorProps = {
-  error: string | undefined;
+export type InputProps = {
+  error?: string | undefined;
 };
 
 export interface registerState {
