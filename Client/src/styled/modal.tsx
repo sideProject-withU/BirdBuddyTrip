@@ -1,11 +1,10 @@
 import styled from 'styled-components';
-import { ErrorProps, showModalProp } from '../state/typeDefs';
+import { InputProps, showModalProp } from '../utils/typeDefs';
 
 export const ModalContainer = styled.div<showModalProp>`
   width: 100%;
   height: 100%;
   display: ${(props) => (props.show ? 'block' : 'none')};
-  border: 10px solid red;
 `;
 
 export const ModalBackdrop = styled.div`
@@ -42,11 +41,11 @@ export const CloseButton = styled.div`
   z-index: 9999;
 `;
 export const Icon = styled.i`
-  margin: 10px;
   padding: 10px;
 `;
 
 export const Form = styled.form`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,20 +56,37 @@ export const Form = styled.form`
 export const Title = styled.div`
   font-weight: bold;
   font-size: 20px;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 `;
 
-export const Input = styled.input<ErrorProps>`
+export const SignInTitle = styled(Title)`
+  margin: 2rem 0;
+`;
+
+export const Input = styled.input<InputProps>`
   all: unset;
-  width: 60%;
+  width: 55%;
   border-bottom: 2px solid ${(props) => (props.error ? 'red' : 'rgba(0, 0, 0, 0.2)')};
   margin: 10px;
   &::placeholder {
     font-size: 15px;
   }
   &:last-child {
-    margin-bottom: 10px;
-    background-color: red;
+    width: 100%;
+  }
+`;
+export const BrithWrap = styled.div`
+  width: 55%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+export const NarrowInput = styled.input<InputProps>`
+  all: unset;
+  width: 4rem;
+  border-bottom: 2px solid ${(props) => (props.error ? 'red' : 'rgba(0, 0, 0, 0.2)')};
+  &::placeholder {
+    font-size: 15px;
   }
 `;
 
@@ -99,7 +115,7 @@ export const SignUpButton = styled(SignUpLink)`
   margin-left: 5px;
 `;
 
-export const LoginButton = styled.button`
+export const Button = styled.button`
   all: unset;
   width: 55%;
   color: black;
@@ -141,3 +157,20 @@ export const ColumnoWrap = styled.div`
   align-items: center;
 `;
 export const GuestButton = styled.div``;
+
+export const SendButton = styled(Button)`
+  position: absolute;
+  width: 60px;
+  height: 30px;
+  top: 95px;
+  right: 0px;
+`;
+
+export const Selection = styled.select`
+  width: 55%;
+  padding: 0.5em 0.5em;
+  font-weight: bold;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  outline: none;
+  margin: 10px;
+`;

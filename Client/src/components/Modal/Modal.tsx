@@ -1,5 +1,4 @@
 import { CloseButton, Icon, ModalBackdrop, ModalContainer, ModalView } from '../../styled/modal';
-
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from '../../state/store/hook';
 import { RootState } from '../../state/store/store';

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { FormData } from '../../state/typeDefs';
+import { FormData } from '../../utils/typeDefs';
 import { useAppDispatch } from '../../state/store/hook';
 import { moveToSignupPage } from '../../state/store/register';
 
