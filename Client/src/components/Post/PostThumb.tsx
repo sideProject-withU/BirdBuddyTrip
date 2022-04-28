@@ -13,7 +13,7 @@ const PostThumb: React.FC<PostProps> = ({ post }) => {
   return (
     <PostThumbContainer>
       <PhotoColumn>
-        <img src='images/photo_test1.jpeg' alt='photo_test1' />
+        <img src={post.image} alt='photo_test1' />
       </PhotoColumn>
       <DetailColumn>
         <header>
@@ -25,7 +25,7 @@ const PostThumb: React.FC<PostProps> = ({ post }) => {
           <span className='finish-date'>{post.finish_date}</span>
         </div>
         <div className='people-location'>
-          <span>인원</span>
+          <span>인원 </span>
           <span className='people'>
             {chatpeople}/{post.people}
           </span>
